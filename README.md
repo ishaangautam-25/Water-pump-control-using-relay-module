@@ -1,56 +1,93 @@
-Water-pump-control-using-relay-module
+# Peristaltic pump control using relay module 
 
+This project focuses on maintaining the moisture level in aeroponic towers by recirculating water. The system is designed to monitor and control the water levels automatically using a NodeMCU, a 4-channel relay module, and water pumps. It ensures optimal water availability for aeroponic systems by refilling water when levels fall below a specified threshold.  
 
-This project implements an automated water management system for aeroponic towers using a Node MCU and a 4-channel relay module to control water pumps. The system maintains optimal moisture levels by monitoring the water level in individual towers and activating pumps as needed.
+## Table of Contents  
 
-Overview
+1. [Introduction](#introduction)  
+2. [Working Principle](#working-principle)  
+3. [Components Required](#components-required)  
+4. [Component Descriptions](#component-descriptions)  
+5. [Circuit Diagram](#circuit-diagram)  
+6. [Usage Instructions](#usage-instructions)  
+7. [License](#license)  
 
-The aeroponic towers require a consistent water level to ensure proper plant growth. As plants absorb water and due to evaporation, the water level may fall below the required threshold. This system uses water level sensors and a relay module to automate the process of filling the water to the required level.
+---
 
-Working Principle
+## Introduction  
 
-The system utilizes a 4-channel relay module to control up to four water pumps. The Node MCU is programmed to monitor water level sensors. When the water level in any of the aeroponic towers drops below a specified level, the corresponding water level sensor sends a high signal (1) to the Node MCU. The relay associated with that sensor is then triggered, activating the water pump until the water level sensor indicates that the level is sufficient (low signal or 0).
+Aeroponic towers require constant moisture levels to sustain plant growth. This is achieved by recirculating water within the system. Over time, due to plant absorption and evaporation, water levels may drop below the required threshold for effective recirculation. The proposed system uses water level sensors and a NodeMCU-controlled relay module to detect and refill water as needed, ensuring uninterrupted operation.  
 
-Components Required
+---
 
-| S.No. | Component                       | Model               | Quantity |
-|-------|---------------------------------|---------------------|----------|
-| 1     | Node MCU                        | ESP8266             | 1        |
-| 2     | Relay Module                    | 4-channel           | 1        |
-| 3     | Water Pump                      | 12V 5000 RPM        | 4        |
+## Working Principle  
 
-1. Relay Module
+1. A 4-channel relay module is used to control four individual water pumps.  
+2. Each aeroponic tower has a water level sensor (digital switch) to monitor its water level.  
+3. When the water level falls below a specified minimum, the corresponding water level sensor outputs **HIGH (1)**.  
+4. The NodeMCU triggers the relay for the respective water pump to refill water.  
+5. The pump stops once the water level sensor outputs **LOW (0)**, indicating the desired level is reached.  
 
-The 4-channel relay module contains four 5V relays and associated components that simplify interfacing with microcontrollers and sensors. 
+---
 
-- Specifications:
-  - Supply Voltage: 3.75V to 6V
-  - Trigger Current: 5mA
-  - Active Current: ~70mA (single relay), ~300mA (all four)
-  - Maximum Contact Voltage: 250V AC, 30V DC
-  - Maximum Current: 10A
+## Components Required  
 
-2. Water Pump (Peristaltic)
+| S.No. | Component          | Model        | Quantity |  
+|-------|---------------------|--------------|----------|  
+| 1     | NodeMCU             | ESP8266      | 1        |  
+| 2     | Relay Module        | 4-Channel    | 1        |  
+| 3     | Water Pump          | 12V 5000 RPM | 4        |  
 
-A peristaltic pump is a type of positive displacement pump designed for various fluid applications. The fluid is contained within a flexible tube, and as the rotor rotates, rollers compress the tube to move the fluid.
+---
 
-- Specifications:
-  - Supply Voltage: 12V DC
-  - Temperature Range: 0℃ to 40℃
-  - Flow Rate Range: 0.1-100 ml/min
-  - Speed Range: 0.1-5000 rpm
+## Component Descriptions  
 
-Installation
+### 1. NodeMCU (ESP8266)  
+A microcontroller with built-in Wi-Fi capability, used to interface with sensors and control relays for automation.  
 
-1. Connect the Node MCU to the relay module according to the pin configuration specified in the documentation.
-2. Wire the water pumps to the relay outputs.
-3. Install the water level sensors in the aeroponic towers.
-4. Upload the appropriate firmware to the Node MCU to manage the relay operations based on sensor inputs.
+### 2. Relay Module (4-Channel)  
+The 4-channel relay module allows independent control of four water pumps.  
+- **Supply Voltage**: 3.75V - 6V  
+- **Trigger Current**: 5mA  
+- **Relay Max Contact Voltage**: 250V AC / 30V DC  
+- **Relay Max Current**: 10A  
 
-Usage
+### 3. Water Pump (Peristaltic)  
+A positive displacement pump designed for smooth fluid delivery.  
+- **Supply Voltage**: 12V DC  
+- **Speed Range**: 0.1 - 5000 RPM  
+- **Flow Rate**: 0.1 - 100 ml/min  
 
-Once set up, the system will automatically monitor the water levels in the aeroponic towers. The water pumps will activate as needed to maintain the desired water level, ensuring optimal conditions for plant growth.
+---
 
-Contributing
+## Circuit Diagram  
 
-Feel free to fork the repository and submit pull requests for any improvements or additional features.
+[Insert the circuit diagram image or ASCII art representation here.]  
+
+---
+
+## Usage Instructions  
+
+1. **Hardware Setup**  
+   - Connect the NodeMCU to the 4-channel relay module.  
+   - Wire the relay outputs to the respective water pumps.  
+   - Connect water level sensors to the NodeMCU digital pins.  
+
+2. **Software Setup**  
+   - Upload the control code to the NodeMCU using the Arduino IDE.  
+   - Ensure the logic in the code matches the pin configuration of your setup.  
+
+3. **Operation**  
+   - Power the system.  
+   - Monitor the water level sensors.  
+   - The pumps will automatically refill water as needed based on sensor readings.  
+
+---
+
+## License  
+
+This project is open-source and licensed under the MIT License. Feel free to use, modify, and distribute the code for educational or commercial purposes.  
+
+---  
+
+For additional details or questions, please contact [Your Email/Contact Info].  
