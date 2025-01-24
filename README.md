@@ -82,11 +82,4 @@ A positive displacement pump designed for smooth fluid delivery.
    - The pumps will automatically refill water as needed based on sensor readings.  
 
 ---
-
-## License  
-
-This project is open-source and licensed under the MIT License. Feel free to use, modify, and distribute the code for educational or commercial purposes.  
-
----  
-
-For additional details or questions, please contact [Your Email/Contact Info].  
+ 
