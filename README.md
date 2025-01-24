@@ -10,7 +10,6 @@ This project focuses on maintaining the moisture level in aeroponic towers by re
 4. [Component Descriptions](#component-descriptions)  
 5. [Circuit Diagram](#circuit-diagram)  
 6. [Usage Instructions](#usage-instructions)  
-7. [License](#license)  
 
 ---
 
